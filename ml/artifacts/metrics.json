@@ -1,0 +1,25 @@
+{
+  "model": "HistGradientBoostingClassifier",
+  "version": "unsw-nb15-v1",
+  "dataset": "UNSW-NB15",
+  "dataset_source": "UNSW Canberra Cyber official project",
+  "train_rows": 82332,
+  "test_rows": 175341,
+  "features": 42,
+  "accuracy": 0.8981,
+  "precision": 0.9879,
+  "recall": 0.8608,
+  "f1": 0.92,
+  "roc_auc": 0.9859,
+  "confusion": [
+    [
+      54744,
+      1256
+    ],
+    [
+      16609,
+      102732
+    ]
+  ],
+  "trained_at": "generated locally"
+}
