@@ -13,3 +13,8 @@ __v0_jsx-dev-runtime.ts
 node_modules
 .next/
 .DS_Store
+
+# UNSW-NB15 data and generated model artifacts
+ml/data/*.csv
+ml/artifacts/*.joblib
+.venv/
