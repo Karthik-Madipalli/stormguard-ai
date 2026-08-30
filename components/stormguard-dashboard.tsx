@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useEffect, useMemo, useState } from "react"
 import {
   Activity,
@@ -134,13 +135,13 @@ export default function StormGuardDashboard() {
       <div className="demo-tag"><span className="live-dot" />DEMO MODE <span className="demo-divider" /> UNSW-NB15</div>
       <nav className="main-nav" aria-label="Primary navigation">
         <button className={active === "overview" ? "nav-item active" : "nav-item"} onClick={() => setActive("overview")}><Layers3 />Overview <span className="nav-count">01</span></button>
-        <button className={active === "threats" ? "nav-item active" : "nav-item"} onClick={() => setActive("threats")}><TriangleAlert />Threats <span className="nav-count danger">04</span></button>
-        <button className={active === "network" ? "nav-item active" : "nav-item"} onClick={() => setActive("network")}><Network />Network <span className="nav-count">12</span></button>
-        <button className="nav-item" onClick={() => notify("Model monitoring loaded")}><BrainCircuit />Models <span className="nav-count">03</span></button>
+        <Link className="nav-item" href="/incidents"><TriangleAlert />Threats <span className="nav-count danger">04</span></Link>
+        <Link className="nav-item" href="/explorer"><Network />Network <span className="nav-count">12</span></Link>
+        <Link className="nav-item" href="/data-model"><BrainCircuit />Models <span className="nav-count">03</span></Link>
       </nav>
       <div className="nav-divider" />
       <div className="nav-heading">OPERATIONS</div>
-      <nav className="main-nav"><button className="nav-item" onClick={() => setActive("timeline")}><Clock3 />Timeline</button><button className="nav-item" onClick={() => setPhishing(true)}><FileWarning />Phishing Lab</button><button className="nav-item" onClick={() => notify("Settings are locked in demo mode")}><LockKeyhole />Settings</button></nav>
+      <nav className="main-nav"><Link className="nav-item" href="/timeline"><Clock3 />Timeline</Link><button className="nav-item" onClick={() => setPhishing(true)}><FileWarning />Phishing Lab</button><Link className="nav-item" href="/settings"><LockKeyhole />Settings</Link></nav>
       <div className="sidebar-bottom"><div className="agent-card"><div className="agent-orbit"><Bot /></div><div><strong>ODIN AGENT</strong><span>ONLINE / v0.8.4</span></div><span className="live-dot" /></div><button className="user-row" onClick={() => notify("Analyst profile: Alex Morgan")}><span className="avatar">AM</span><span><strong>Alex Morgan</strong><small>Security Analyst</small></span><ChevronRight /></button></div>
     </aside>
 
