@@ -1,3 +1,3 @@
 import { NextResponse } from 'next/server'
-import { threats } from '@/lib/stormguard/data'
-export async function GET(){ return NextResponse.json({ data: threats, model: 'DEMO MODEL' }) }
+import { listThreats } from '@/lib/stormguard/server'
+export async function GET(){ try { return NextResponse.json({ data: await listThreats(), model:'DEMO MODEL · Neon' }) } catch { return NextResponse.json({ error:'Database unavailable' }, { status:503 }) } }
